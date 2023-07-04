@@ -1,0 +1,70 @@
+
+
+# 8x8 square centered on the origin IS contained by a circle of radius 8 centered on the origin.
+RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 Circle 0,0 8 true square inside circle
+
+# 8x8 square centered on 5,5 is NOT contained by a circle of radius 8 centered on the origin.
+RegularConvexPolygon 1,1 1,9 9,9 9,1 Circle 0,0 8 false square intersects circle
+
+# Circle of radius 4 centered at 3,3 IS NOT contained within an 8x8 square centered on the origin.
+Circle 3,3 4 RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 false circle intersects square
+
+# Circle of radius 4 centered at 0,0 is contained by a circle of radius 8 centered at the origin.
+Circle 0,0 4 Circle 0,0 8 true circle inside circle
+
+# Circle of radius 4 centered at 5,5 is NOT contained by a circle of radius 8 centered at the origin.
+Circle 5,5 4 Circle 0,0 8 false circle intersects circle
+
+# Circle of radius 4 centered at 4.01,0 is NOT contained by a circle of radius 8 centered at the origin.
+Circle 4.01,0 4 Circle 0,0 8 false circle intersects circle
+
+# Circle of radius 4 centered at 3,3 is NOT contained by a circle of radius 8 centered at the origin. 
+Circle 3,3 4 Circle 0,0 8 false circle intersects circle
+
+# Circle of radius 4 centered on the origin IS contained by an 8x8 square centered at the origin.
+Circle 0,0 4 RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 true circle inside square
+
+# Circle of radius 4 centered on 5,5 is NOT contained by an 8x8 square centered at the origin..
+Circle 5,5 4 RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 false circle intersects square
+
+# Circle of radius 4 centered on 4.01,0 is NOT contained by an 8x8 square centered at the origin.
+Circle 4.01,0 4 RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 false circle intersects square
+
+# Circle of radius 4 centered on -4.01,-4.01 is NOT contained by an 8x8 square centered at the origin.
+Circle -4.01,-4.01 4 RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 false circle intersects square
+
+# 8x8 square centered on the origin is contained by a 16x16 square centered on the origin.
+RegularConvexPolygon -4,-4 -4,4 4,4 4,-4 RegularConvexPolygon -8,-8 -8,8 8,8 8,-8 true square inside square
+
+# 8x8 square centered on the origin is contained by a 16x16 square centered on the origin.
+RegularConvexPolygon 1,1 1,9 9,9 9,1 RegularConvexPolygon -8,-8 -8,8 8,8 8,-8 true square inside square
+
+# Circle of radius 4 centered on the origin IS contained by a pentagon centered at some weird ass coordinates.
+Circle 0,0 4 RegularConvexPolygon 0,8 7.60845,2.472136 4.70228,-6.472136 -4.70228,-6.472136 -7.60845,2.472136 true circle inside pentagon
+
+# Circle of radius 4 centered on the origin is NOT contained by a pentagon centered at some weird ass coordinates.
+Circle 5,5 4 RegularConvexPolygon 0,8 7.60845,2.472136 4.70228,-6.472136 -4.70228,-6.472136 -7.60845,2.472136 false circle intersects pentagon
+
+# Pentagon centered at weird ass coordinates IS contained by a circle of radius 12 centered on the origin
+RegularConvexPolygon 0,8 7.60845,2.472136 4.70228,-6.472136 -4.70228,-6.472136 -7.60845,2.472136 Circle 0,0 12 true pentagon inside circle
+
+# Pentagon centered at weird ass coordinates IS contained by a circle of radius 12 centered on the origin
+RegularConvexPolygon 5,13 12.60845,7.472136 9.70228,-1.472136 1.70228,-1.472136 -2.60845,7.472136 Circle 0,0 12 false pentagon intersects circle
+
+# Triangle centered at weird ass coordinates IS contained by a pentagon centered at weird ass coordinates
+RegularConvexPolygon 0,4 -3.81,-3.81 3.81,-3.81 RegularConvexPolygon 0,8 7.60845,2.472136 4.70228,-6.472136 -4.70228,-6.472136 -7.60845,2.472136 true triangle inside pentagon
+
+# Triangle centered at weird ass coordinates is NOT contained by a pentagon centered at weird ass coordinates
+RegularConvexPolygon 5,9 2.81,2.81 8.81,2.81 RegularConvexPolygon 0,8 7.60845,2.472136 4.70228,-6.472136 -4.70228,-6.472136 -7.60845,2.472136 false triangle intersects pentagon
+
+# Circle of radius 4 centered at the origin IS contained by a ReuleauxTriangle centered at some weird ass coordinates
+Circle 0,0 4 ReuleauxTriangle 0,8 -7.6193,-7.6193 7.6193,-7.6193 true circle inside reuleauxtriangle
+
+# Circle of radius 4 centered on 5,5 is NOT contained by a ReuleauxTriangle centered at some weird ass coordinates
+Circle 5,5 4 ReuleauxTriangle 0,8 -7.6193,-7.6193 7.6193,-7.6193 false circle intersects reuleauxtriangle
+
+# ReuleauxTriangle centered at some weird ass coordinates IS contained by a Circle of radius 16 centered at the origin
+ReuleauxTriangle 0,8 -7.6193,-7.6193 7.6193,-7.6193 Circle 0,0 16 true reuleauxtriangle inside circle
+
+# ReuleauxTriangle centered at some weird ass coordinates is NOT contained by a Circle of radius 16 centered at the origin
+ReuleauxTriangle 10,18 3.6193,3.6193 17.6193,3.6193 Circle 0,0 16 false reuleauxtriangle intersects circle
